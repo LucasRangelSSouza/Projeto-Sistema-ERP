@@ -454,7 +454,7 @@ class Cadastro_de_Produtos():
             cursor.execute('SELECT GRUPO FROM GRUPO ORDER BY ID')
             for item in cursor.fetchall():
                 self.ComboGrupo.append(item[0]) 
-           
+
 
             cursor.execute('SELECT SUBGRUPO FROM SUBGRUPO ORDER BY ID')
             for item in cursor.fetchall():
@@ -488,7 +488,7 @@ class Cadastro_de_Produtos():
             return False
 
     def ValidaNumerico(self, porque, index, value_if_allowed, prior_value, text, validation_type, trigger_type, widget_name):
-           
+
         if text.isnumeric() and int(index) < 8:
             return True
         else:
