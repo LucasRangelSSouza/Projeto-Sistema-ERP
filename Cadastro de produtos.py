@@ -40,7 +40,7 @@ def BancoDeDados():
         pass
 
     elif TecnologiaDeDados=="Firebird":
-         try:
+        try:
             DIRETORIO='CADASTRO.FDB'
             USER='sysdba'
             PASS='masterkey'
@@ -51,7 +51,7 @@ def BancoDeDados():
             
             
             
-         except:
+        except:
             print('bizarro')
             status=False
             return status,False
@@ -80,7 +80,7 @@ class Cadastro_de_Produtos():
         self.codigo.place(x=370 , y= 30 )
         
 
-          
+
         Label(self.frame,text='Referencia: ',font = fonte).place(x=590, y= 30)
         self.referencia = Entry(self.frame,font=fonte,width=18)
         self.referencia.bind('<Any-KeyPress>',self.ChecaReferencia)
@@ -147,7 +147,7 @@ class Cadastro_de_Produtos():
         self.cest.place(x=690 , y= 230 )
 
         validaValores = (self.frame.register(self.ValidaValores),'%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
-         
+
         Label(self.frame,text='Preço Custo: ',font = fonte).place(x=10, y= 300)
         self.custo = Entry(self.frame,font=fonte,width=10,validate = 'key', validatecommand = validaValores,justify='right')
         self.custo.place(x= 120 , y= 300 )
@@ -190,7 +190,7 @@ class Cadastro_de_Produtos():
             cursor.execute('SELECT GRUPO FROM GRUPO ORDER BY ID')
             for item in cursor.fetchall():
                 self.ComboGrupo.append(item[0]) 
-           
+
 
             cursor.execute('SELECT SUBGRUPO FROM SUBGRUPO ORDER BY ID')
             for item in cursor.fetchall():
@@ -224,7 +224,7 @@ class Cadastro_de_Produtos():
             return False
 
     def ValidaNumerico(self, porque, index, value_if_allowed, prior_value, text, validation_type, trigger_type, widget_name):
-           
+
         if text.isnumeric() and int(index) < 8:
             return True
         else:
@@ -244,7 +244,7 @@ class Cadastro_de_Produtos():
         
     def Botao_Salvar(self):
         if self.Ja_Existe:
-            update
+            print("update")
         elif self.Ja_Existe==False:
             status,conexao = BancoDeDados()
             
@@ -275,7 +275,7 @@ class Cadastro_de_Produtos():
             
             sql="INSERT INTO PRODUTOS (ID, CODIGO, REFERENCIA, DESCRICAO, GRUPO, SUBGRUPO, MARCA, DEPARTAMENTO, TRIBUTACAO, UNIDADE, NCM, CEST, PRECO_CUSTO, PRECO_VAREJO, PRECO_ATACADO, LUCRO_VAREJO, LUCRO_ATACADO, ESTOQUE) VALUES (1, '7894561237894', '123456', 'TESLA ROADSTER ELETRICO 1000 KM/CARGA', 2, 2, 2, 2, 2, '1', '123456789', '321654987', 150000.75, 250000.25, 200000.75, 10, 15, 25)"\
             %(Codigo,Referencia,Descricao,Grupo,Subgrupo,Marca,Departamento,Tributacao,Unidade,Ncm,Cest,Custo,Varejo,Atacado,Lucro_Varejo,Lucro_Atacado,Estoque)
- 
+
             #cursor.execute(sql)
             
             #conexao.close()
@@ -325,7 +325,7 @@ class Cadastro_de_Produtos():
                 
                     
         else:
-            self.informacoes['text'] = 'Desculpe, ocorreu um erro inesperado'
+            self.Informacoes['text'] = 'Desculpe, ocorreu um erro inesperado'
 
     def limpaCampos(self):
         self.referencia.delete(0,END)
@@ -429,7 +429,3 @@ ChamaCadastroDeProdutos()
 
 
 
-
-
-
-        

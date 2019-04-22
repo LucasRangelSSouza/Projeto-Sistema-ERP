@@ -1,13 +1,13 @@
 from tkinter import *
 
-import MySQLdb  #My Sql
+#import MySQLdb  #My Sql
 import sqlite3  #sqlite 3
-import fdb      #firebird
+#import fdb      #firebird
 
 
 #TecnologiaDeDados ="MySql"
-#TecnologiaDeDados = "SqLite"
-TecnologiaDeDados="Firebird"
+TecnologiaDeDados = "SqLite"
+#TecnologiaDeDados="Firebird"
 ProxForm = False
 
 def BancoDeDados():

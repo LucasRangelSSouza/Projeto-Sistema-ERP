@@ -1,9 +1,9 @@
 from tkinter import *
 from tkinter import ttk
-import MySQLdb  #My Sql
+#import MySQLdb  #My Sql
 import sqlite3  #sqlite 3
-import fdb      #firebird
-TecnologiaDeDados='Firebird'
+#import fdb      #firebird
+TecnologiaDeDados='SqLite'
 
 
 def BancoDeDados():
@@ -770,7 +770,6 @@ Login(root)
 #root.iconbitmap('py.ico')
 root.mainloop()
 IniciaMenuPrincipal()
- 
 
 
 
